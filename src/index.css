@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+@import "tailwindcss";
+@plugin "daisyui";
+
+@plugin "daisyui" {
+    themes: light --default, dark --prefersdark;
+}
+
+@theme {
+    --font-roboto: "Roboto Slab", serif;
+}
+
+.App {
+    @apply w-2xl mx-auto mt-20 font-roboto;
+}
+
+.Header {
+    @apply text-[#8785a2] text-6xl p-8 text-center font-bold;
+}
+
+.AddForm {
+    @apply bg-[#dbe2ef] px-8 py-4 mb-8 rounded-md shadow-md;
+}
+
+.Form {
+    @apply flex gap-8 items-center;
+}
+
+.Input {
+    @apply border border-white bg-white rounded-4xl p-2.5 w-full text-[1rem] outline-none text-[#314e52] font-semibold;
+}
+
+.SubmitButton {
+    @apply bg-gradient-to-br from-[#ffc73c] to-[salmon] rounded-2xl py-2.5 px-3.5 cursor-pointer text-lg text-white flex items-center;
+}
+
+.TaskDisplayer {
+    @apply flex flex-col gap-5;
+}
+
+.Task {
+    @apply py-3.5 px-8 duration-100 mb-1 bg-white flex items-center justify-between cursor-pointer rounded-md shadow-md hover:bg-amber-400 hover:text-white 
+    font-roboto;
+}
+
+.TaskContent {
+    @apply flex items-center gap-10;
+}
+
+.TaskTitle {
+    @apply block w-44 text-slate-800 overflow-hidden text-ellipsis;
+}
+
+.BadgeError {
+    @apply badge badge-soft badge-error;
+}
+
+.BadgeSuccess {
+    @apply badge badge-soft badge-success;
+}
+
+.Accomplished {
+    @apply font-bold line-through decoration-success decoration-2;
+}
+
+.DateDisplay {
+    @apply text-slate-500;
+}
