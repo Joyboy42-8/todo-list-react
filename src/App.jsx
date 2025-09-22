@@ -11,7 +11,8 @@ export default function App() {
     task.current.focus();
   }, [])
 
-  const handleAddClick = () => {
+  const handleAddClick = (e) => {
+    e.preventDefault();
     // Verifier si le champ n'est pas vide 
     task.current.value == '' ? alert("Le champ ne doit pas etre vide !") : 
     setTasks([
@@ -31,7 +32,7 @@ export default function App() {
       <Header />
 
       <section className="AddForm">
-        <div className="Form">
+        <form onSubmit={(e) => handleAddClick(e)} className="Form">
           <input
             type="text"
             ref={task}
@@ -39,13 +40,10 @@ export default function App() {
             placeholder="Que souhaitez-vous ajouter ?"
             required
           />
-          <button
-            className="SubmitButton"
-            onClick={handleAddClick}
-          >
+          <button type='submit' className="SubmitButton">
             Ajouter
           </button>
-        </div>
+        </form>
       </section>
 
       <Tasks>
